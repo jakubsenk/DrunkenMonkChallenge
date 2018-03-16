@@ -107,7 +107,7 @@ namespace DrunkenMonk
 			Console.Write(displayChar);
 		}
 
-		public static void DrawPathToHome(List<List<Tile>> map)
+		public static void DrawPathToHome(List<List<Tile>> map, int sleepTime = 15)
 		{
 			int goalX = Console.WindowWidth - 2;
 			int goalY = Console.WindowHeight - 3;
@@ -123,7 +123,7 @@ namespace DrunkenMonk
 					}
 					if (t.Type == TileType.Empty)
 					{
-						Thread.Sleep(15);
+						Thread.Sleep(sleepTime);
 						Console.SetCursorPosition(t.X, t.Y);
 						Console.BackgroundColor = ConsoleColor.DarkGreen;
 						Console.Write(" ");
@@ -136,7 +136,7 @@ namespace DrunkenMonk
 				{
 					if (t.Type == TileType.Empty)
 					{
-						Thread.Sleep(15);
+						Thread.Sleep(sleepTime);
 						Console.SetCursorPosition(t.X, t.Y);
 						Console.BackgroundColor = ConsoleColor.Black;
 						Console.Write(" ");

@@ -68,8 +68,8 @@ namespace DrunkenMonk
 
 				if (c.Key == ConsoleKey.Spacebar)
 				{
-					map = Game.FindPath(x, y);
-					Drawer.DrawPathToHome(map);
+					map = PathFinder.FindPath(x, y);
+					Drawer.DrawPathToHome(map, 5);
 					continue;
 				}
 
@@ -133,6 +133,8 @@ namespace DrunkenMonk
 				Console.ReadKey(true);
 			}
 			Console.ReadKey();
+			Console.ResetColor();
+			Console.Clear();
 		}
 	}
 }
